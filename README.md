@@ -33,3 +33,13 @@ kubectl run web-server --image=nginx
 ```
 kubectl create deployment nginx-deploy --image=nginx --replicas=3
 ```
+
+## How to get the FQDN of the service
+
+- Exec inside the pod and execute the command 
+```
+kubectl exec -it nginx-deployment-5d6d68db49-4n5zl -- bash
+apt-get update
+apt-get install dnsutils
+nslookup nginx-service
+```

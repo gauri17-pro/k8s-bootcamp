@@ -43,3 +43,15 @@ apt-get update
 apt-get install dnsutils
 nslookup nginx-service
 ```
+
+You will get the output as:
+```
+nslookup nginx-service
+;; Got recursion not available from 10.96.0.10
+Server:         10.96.0.10
+Address:        10.96.0.10#53
+
+Name:   nginx-service.default.svc.cluster.local
+Address: 10.104.165.244
+;; Got recursion not available from 10.96.0.10
+```

@@ -40,7 +40,7 @@ kubectl create deployment nginx-deploy --image=nginx --replicas=3
 ```
 kubectl exec -it nginx-deployment-5d6d68db49-4n5zl -- bash
 apt-get update
-apt-get install dnsutils
+apt-get install dnsutils -y
 nslookup nginx-service
 ```
 

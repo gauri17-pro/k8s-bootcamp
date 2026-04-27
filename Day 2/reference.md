@@ -17,5 +17,5 @@ kubectl autoscale deployment <deployment-name> --min=2 --max=5 --cpu=60
 
 ## Command to increase the load using service of the deployment
 ```
-kubectl run -it --rm load-generator-1 --image=busybox -- /bin/bash -c "while true; do wget -q -O- http://nginx-service; done"
+kubectl run -it --rm load-generator-1 --image=busybox -- /bin/sh -c "while true; do wget -q -O- http://nginx-service; done"
 ```

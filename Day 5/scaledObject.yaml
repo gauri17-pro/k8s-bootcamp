@@ -1,0 +1,23 @@
+apiVersion: keda.sh/v1alpha1 
+kind: ScaledObject 
+metadata: 
+  name: nginx-scaledobject
+spec:
+  scaledTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx-app
+  pollingInterval: 5
+  cooldownPeriod: 300
+  minReplicaCount: 0
+  maxReplicaCount: 5
+  fallback:
+    failureThreshold: 3
+    replicas: 1
+  triggers:
+    - type: cron
+      metadata: 
+        timezone: Asia/Kolkata
+        start: "10 * * * *"
+        end: "45 * * * *"
+        desiredReplicas: "5"

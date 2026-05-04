@@ -3,7 +3,7 @@ kind: ScaledObject
 metadata: 
   name: nginx-scaledobject
 spec:
-  scaledTargetRef:
+  scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: nginx-app

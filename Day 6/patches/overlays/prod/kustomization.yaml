@@ -13,18 +13,18 @@ patches:
     patch: |-
       - op: add
         path: /metadata/namespace
-        value: dev
+        value: prod
       - op: replace
-        path: /spec/replicas
-        value: 3
+        path: /spec/template/spec/containers/0/image
+        value: nginx:1.22.0
       - op: replace
         path: /spec/template/spec/containers/0/resources
         value:
           requests:
-            cpu: "200m"
+            cpu: "100m"
             memory: "256Mi"
           limits:
-            cpu: "400m"
+            cpu: "300m"
             memory: "512Mi"
       
 
